@@ -1,0 +1,56 @@
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.robot-container {
+    position: relative;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.robot {
+    width: 150px;
+    transition: transform 0.2s ease-out;
+}
+
+.robot-image {
+    width: 100%;
+    height: auto;
+}
+
+.robot.jump {
+    transform: translateY(-30px);
+}
+
+.clicks-display {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.rank-badge .badge {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+}
+
+.progress {
+    height: 1.5rem;
+    margin: 1rem 0;
+}
+
+#clickButton {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .robot {
+        width: 120px;
+    }
+    
+    .clicks-display {
+        font-size: 1.5rem;
+    }
+}

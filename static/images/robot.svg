@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+        .robot-part { fill: #6c757d; }
+        .eye { fill: #0dcaf0; }
+        .antenna { fill: #0dcaf0; }
+    </style>
+    <circle class="robot-part" cx="50" cy="50" r="35"/>
+    <circle class="eye" cx="35" cy="45" r="5"/>
+    <circle class="eye" cx="65" cy="45" r="5"/>
+    <rect class="robot-part" x="35" y="60" width="30" height="5" rx="2.5"/>
+    <rect class="antenna" x="48" y="5" width="4" height="15"/>
+    <circle class="antenna" cx="50" cy="5" r="3"/>
+</svg>
