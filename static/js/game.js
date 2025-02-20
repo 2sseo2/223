@@ -2,14 +2,14 @@ class ClickerGame {
     constructor() {
         this.clicks = 0;
         this.ranks = [
-            { name: 'Bronze Beater', threshold: 0 },
-            { name: 'Silver Snapper', threshold: 100 },
-            { name: 'Gold Gooner', threshold: 500 },
-            { name: 'Platinum Pro', threshold: 1000 },
-            { name: 'Diamond Destroyer', threshold: 5000 },
-            { name: 'Master Manipulator', threshold: 10000 }
+            { name: 'Novice Goon', threshold: 0 },
+            { name: 'Apprentice Goon', threshold: 100 },
+            { name: 'Elite Goon', threshold: 500 },
+            { name: 'Super Goon', threshold: 1000 },
+            { name: 'Mega Goon', threshold: 5000 },
+            { name: 'Ultimate Goon', threshold: 10000 }
         ];
-        
+
         this.initializeElements();
         this.loadProgress();
         this.setupEventListeners();
@@ -70,9 +70,9 @@ class ClickerGame {
     calculateProgress() {
         const currentRank = this.getCurrentRank();
         const nextRank = this.getNextRank();
-        
+
         if (currentRank === nextRank) return 100;
-        
+
         const progressInRank = this.clicks - currentRank.threshold;
         const rankRange = nextRank.threshold - currentRank.threshold;
         return Math.min((progressInRank / rankRange) * 100, 100);
@@ -82,10 +82,10 @@ class ClickerGame {
         this.clickCounter.textContent = this.clicks;
         const currentRank = this.getCurrentRank();
         this.rankBadge.textContent = currentRank.name;
-        
+
         const progress = this.calculateProgress();
         this.rankProgress.style.width = `${progress}%`;
-        
+
         // Update rank badge color based on rank
         const rankIndex = this.ranks.findIndex(rank => rank.name === currentRank.name);
         const colors = ['secondary', 'info', 'warning', 'primary', 'info', 'danger'];
