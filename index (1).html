@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goon Clicker</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="text-center mb-4">
+            <h1 class="display-4">Goon Clicker</h1>
+            <div class="rank-badge mt-3">
+                <span class="badge bg-secondary" id="currentRank">Novice Goon</span>
+            </div>
+        </div>
+
+        <div class="game-container text-center">
+            <div class="robot-container mb-4">
+                <div id="robot" class="robot">
+                    <img src="images/robot.svg" alt="Robot" class="robot-image">
+                </div>
+            </div>
+
+            <div class="stats mb-4">
+                <h2 class="clicks-display">Clicks: <span id="clickCounter">0</span></h2>
+                <div class="progress">
+                    <div id="rankProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <button id="clickButton" class="btn btn-lg btn-secondary">
+                Goon
+            </button>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
