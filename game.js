@@ -11,11 +11,9 @@ class ClickerGame {
         ];
 
         this.initializeElements();
-        if (this.isValidSetup()) {
-            this.loadProgress();
-            this.setupEventListeners();
-            this.updateUI();
-        }
+        this.loadProgress();
+        this.setupEventListeners();
+        this.updateUI();
     }
 
     initializeElements() {
@@ -24,14 +22,10 @@ class ClickerGame {
         this.rankBadge = document.getElementById('currentRank');
         this.rankProgress = document.getElementById('rankProgress');
         this.clickButton = document.getElementById('clickButton');
-    }
 
-    isValidSetup() {
         if (!this.robot || !this.clickCounter || !this.rankBadge || !this.rankProgress || !this.clickButton) {
-            console.error("❌ ERROR: One or more game elements are missing! Check your HTML IDs.");
-            return false;
+            console.error("One or more game elements are missing. Check your HTML IDs.");
         }
-        return true;
     }
 
     loadProgress() {
@@ -42,7 +36,11 @@ class ClickerGame {
     }
 
     setupEventListeners() {
-        this.clickButton.addEventListener('click', () => this.handleClick());
+        if (this.clickButton) {
+            this.clickButton.addEventListener('click', () => this.handleClick());
+        } else {
+            console.error("Click button not found!");
+        }
     }
 
     handleClick() {
@@ -105,23 +103,18 @@ class ClickerGame {
             this.rankProgress.style.width = `${progress}%`;
         }
 
-        this.updateRankBadgeColor(currentRank);
-    }
-
-    updateRankBadgeColor(currentRank) {
-        if (!this.rankBadge) return;
-
         const rankIndex = this.ranks.findIndex(rank => rank.name === currentRank.name);
-        const colors = ['secondary', 'info', 'warning', 'primary', 'success', 'danger'];
+        const colors = ['secondary', 'info', 'warning', 'primary', 'info', 'danger'];
 
-        // Remove existing bg- classes
-        this.rankBadge.classList.forEach(cls => {
-            if (cls.startsWith('bg-')) {
-                this.rankBadge.classList.remove(cls);
-            }
-        });
+        if (this.rankBadge) {
+            this.rankBadge.classList.forEach(cls => {
+                if (cls.startsWith('bg-')) {
+                    this.rankBadge.classList.remove(cls);
+                }
+            });
 
-        this.rankBadge.classList.add(`bg-${colors[rankIndex]}`);
+            this.rankBadge.classList.add(`bg-${colors[rankIndex]}`);
+        }
     }
 }
 
