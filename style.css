@@ -1,56 +1,79 @@
-.game-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.robot-container {
-    position: relative;
-    height: 200px;
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #222; /* Dark background */
+    color: #fff;
+    margin: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.robot {
-    width: 150px;
-    transition: transform 0.2s ease-out;
+/* Game Container */
+.container {
+    background: #333; /* Slightly lighter background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+}
+
+/* Rank Badge */
+.rank-badge .badge {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+/* Click Counter */
+.clicks-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Robot Image */
+.robot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .robot-image {
-    width: 100%;
-    height: auto;
+    width: 150px;
+    transition: transform 0.2s;
 }
 
-.robot.jump {
-    transform: translateY(-30px);
+/* Click Animation */
+.jump {
+    transform: scale(1.1);
 }
 
-.clicks-display {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.rank-badge .badge {
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-}
-
+/* Progress Bar */
 .progress {
-    height: 1.5rem;
-    margin: 1rem 0;
+    height: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+.progress-bar {
+    background-color: #007bff; /* Blue color */
+}
+
+/* Click Button */
 #clickButton {
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
+    background-color: #ff4757; /* Red color */
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-@media (max-width: 576px) {
-    .robot {
-        width: 120px;
-    }
-    
-    .clicks-display {
-        font-size: 1.5rem;
-    }
+#clickButton:hover {
+    background-color: #e84118; /* Darker red */
 }
