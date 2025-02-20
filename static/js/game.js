@@ -2,12 +2,12 @@ class ClickerGame {
     constructor() {
         this.clicks = 0;
         this.ranks = [
-            { name: 'Novice Goon', threshold: 0 },
-            { name: 'Apprentice Goon', threshold: 100 },
-            { name: 'Elite Goon', threshold: 500 },
-            { name: 'Super Goon', threshold: 1000 },
-            { name: 'Mega Goon', threshold: 5000 },
-            { name: 'Ultimate Goon', threshold: 10000 }
+            { name: 'Novice Goon', threshold: 1000 },
+            { name: 'Apprentice Goon', threshold: 3000 },
+            { name: 'Elite Goon', threshold: 9000 },
+            { name: 'Super Goon', threshold: 27000 },
+            { name: 'Mega Goon', threshold: 81000 },
+            { name: 'Ultimate Goon', threshold: 243000 }
         ];
 
         this.initializeElements();
